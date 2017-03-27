@@ -18,6 +18,8 @@ INC += -I$(STMLIB)/STM32F10x_StdPeriph_Driver/inc
 INC += -I$(TOP)/tools
 INC += -I$(TOP)/led
 INC += -I$(TOP)/pwm
+INC += -I$(TOP)/beep
+INC += -I$(TOP)/key
 
 TARGET = Demo
 SRC = $(shell find ./ -name '*.c')  
@@ -68,6 +70,6 @@ clean:
 
 PHONY += st-flash
 stlink: all 
-	st-flash write $(TARGET).bin 0x08000000
+	st-flash write $(TARGET).bin 0x8000000
 
 .PHONY: PHONY
