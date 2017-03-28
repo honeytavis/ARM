@@ -6,6 +6,8 @@
 #include "stm32f10x.h"
 #include "stm32f10x_tim.h"
 #include "stdint.h"
+
+#include "sys.h"
 #include "delay.h"
 #include "led.h"
 #include "timer.h"
