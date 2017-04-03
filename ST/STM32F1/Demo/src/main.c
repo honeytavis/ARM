@@ -24,8 +24,8 @@ int main()
 
   // LED_Blink(); 
 	// Beep(); 
-  // TIM3_PWM(7199, 0); // 72000/7200 = 10KHz 
-	Key_Press(); 
+  TIM3_PWM(7199, 0); // 72000/7200 = 10KHz 
+	// Key_Press(); 
   
   return 0;
 }
@@ -86,7 +86,6 @@ void Key_Press(void) {
 				case KEY1_PRES: LED1 = !LED1; break; // LED1 翻转
 				case KEY2_PRES: LED0 = !LED0; LED1 = !LED1; break; // LED0 LED1 同时翻转
 				case WKUP_PRES: BEEP = !BEEP; break;
-
 			}
 		}
 		delay_ms(100); // 采样频率
@@ -94,29 +93,29 @@ void Key_Press(void) {
 }
 
 void TIM3_PWM(uint16_t arr, uint16_t psc) {
-  uint16_t led0Brightness = 0; 
+  uint16_t led0Brightness = 3600; 
   uint8_t status = 1; 
+
+  delay_init(); 
 
   TIM3_PWM_Init(arr, 0); 
   TIM_SetCompare2(TIM3, led0Brightness); 
 
-  delay_init(); 
-
-  for (;;) {
-    if (status) {
-      led0Brightness += 100; 
-      TIM_SetCompare2(TIM3, led0Brightness); 
-      delay_ms(100); 
-      if (led0Brightness > arr) {
-        status = 0; 
-      }
-    } else {
-      led0Brightness -= 100; 
-      TIM_SetCompare2(TIM3, led0Brightness); 
-      delay_ms(100); 
-      if (led0Brightness < 1) {
-        status = 1; 
-      }
-    }
-  }
+  // for (;;) {
+  //   if (status) {
+  //     led0Brightness += 100; 
+  //     TIM_SetCompare2(TIM3, led0Brightness); 
+  //     delay_ms(100); 
+  //     if (led0Brightness > arr) {
+  //       status = 0; 
+  //     }
+  //   } else {
+  //     led0Brightness -= 100; 
+  //     TIM_SetCompare2(TIM3, led0Brightness); 
+  //     delay_ms(100); 
+  //     if (led0Brightness < 1) {
+  //       status = 1; 
+  //     }
+  //   }
+  // }
 }
