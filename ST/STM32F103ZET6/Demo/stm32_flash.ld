@@ -42,9 +42,13 @@ _Min_Stack_Size = 0x200; /* required amount of stack */
 /* Specify the memory areas */
 MEMORY
 {
-  FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 512K
-  RAM (xrw)       : ORIGIN = 0x20000000, LENGTH = 64K
-  MEMORY_B1 (rx)  : ORIGIN = 0x60000000, LENGTH = 0K
+  /* FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 512K */
+  /* RAM (xrw)       : ORIGIN = 0x20000000, LENGTH = 64K */
+  /* MEMORY_B1 (rx)  : ORIGIN = 0x60000000, LENGTH = 0K */
+
+  FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 0x80000 
+  RAM (xrw)       : ORIGIN = 0x20000000, LENGTH = 0x10000 
+  MEMORY_B1 (rx)  : ORIGIN = 0x60000000, LENGTH = 0x0
 }
 
 /* Define output sections */

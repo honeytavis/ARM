@@ -23,10 +23,10 @@ void TIM3_PWM(uint16_t arr, uint16_t psc);
 int main()
 {
 
-  // LED_Blink(); 
+  LED_Blink(); 
 	// Beep(); 
   // TIM3_PWM(7199, 0); // 72000/7200 = 10KHz
-  TIM3_PWM(719, 0); // 72000/720 = 100KHz
+  // TIM3_PWM(719, 0); // 72000/720 = 100KHz
 	// Key_Press(); 
 	// NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 
 	// USART1_Init(); 
