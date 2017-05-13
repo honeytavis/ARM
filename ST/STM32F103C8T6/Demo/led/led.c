@@ -22,7 +22,7 @@ void LED_Blink(void) {
 
   for (;;) {
     GPIO_ResetBits(GPIOC, GPIO_Pin_13); 
-		Delay(0xffffff); 
+		Delay(0xfffff); 
 
     GPIO_SetBits(GPIOC, GPIO_Pin_13); 
 		Delay(0xfffff); 
