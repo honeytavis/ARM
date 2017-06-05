@@ -25,22 +25,26 @@ int main()
 
 	  if (X1 && X0) {
 	  		GPIO_SetBits(GPIOA, GPIO_Pin_0); 
-	  		GPIO_ResetBits(GPIOA, GPIO_Pin_3); 
-	  		GPIO_ResetBits(GPIOA, GPIO_Pin_6); 
+	  		GPIO_ResetBits(GPIOA, GPIO_Pin_2); 
+	  		GPIO_ResetBits(GPIOA, GPIO_Pin_4); 
+	  		GPIO_SetBits(GPIOA, GPIO_Pin_6); 
 	  		GPIO_SetBits(GPIOC, GPIO_Pin_13); 
 		} else if (X1 && (!X0)) {
 	  		GPIO_ResetBits(GPIOA, GPIO_Pin_0); 
-	  		GPIO_SetBits(GPIOA, GPIO_Pin_3); 
-	  		GPIO_ResetBits(GPIOA, GPIO_Pin_6); 
+	  		GPIO_SetBits(GPIOA, GPIO_Pin_2); 
+	  		GPIO_ResetBits(GPIOA, GPIO_Pin_4); 
+	  		GPIO_SetBits(GPIOA, GPIO_Pin_6); 
 	  		GPIO_SetBits(GPIOC, GPIO_Pin_13); 
 		} else if ((!X1) && X0) {
 	  		GPIO_ResetBits(GPIOA, GPIO_Pin_0); 
-	  		GPIO_ResetBits(GPIOA, GPIO_Pin_3); 
+	  		GPIO_ResetBits(GPIOA, GPIO_Pin_2); 
+	  		GPIO_SetBits(GPIOA, GPIO_Pin_4); 
 	  		GPIO_SetBits(GPIOA, GPIO_Pin_6); 
 	  		GPIO_SetBits(GPIOC, GPIO_Pin_13); 
 		} else {
-	  		GPIO_ResetBits(GPIOA, GPIO_Pin_0); 
-	  		GPIO_ResetBits(GPIOA, GPIO_Pin_3); 
+	  		GPIO_SetBits(GPIOA, GPIO_Pin_0); 
+	  		GPIO_ResetBits(GPIOA, GPIO_Pin_2); 
+	  		GPIO_ResetBits(GPIOA, GPIO_Pin_4); 
 	  		GPIO_ResetBits(GPIOA, GPIO_Pin_6); 
 	  		GPIO_ResetBits(GPIOC, GPIO_Pin_13); 
 		}
